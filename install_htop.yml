@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install htop package
+    community.general.apk:
+      name: htop
+  - name: install vim editor
+    community.general.apk:
+      name: vim
+
+  - name: install git version control system
+    community.general.apk:
+      name: git
+
+  - name: install nginx server
+    community.general.apk:
+      name: nginx
