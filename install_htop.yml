@@ -30,5 +30,17 @@
   - name: start and enable nginx server
     ansible.builtin.service:
       name: nginx
-      enabled: true
+      enabled: false
       state: started
+
+  - name: install python3 interpreter
+    community.general.apk:
+      name: python3
+      state: present
+      update_cache: yes
+
+  - name: install tmux 
+    community.general.apk:
+      name: tmux
+      state: present
+      update_cache: yes
