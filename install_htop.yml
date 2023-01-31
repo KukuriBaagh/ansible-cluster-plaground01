@@ -30,7 +30,7 @@
   - name: start and enable nginx server
     ansible.builtin.service:
       name: nginx
-      enabled: false
+      enabled: true
       state: started
 
   - name: install python3 interpreter
