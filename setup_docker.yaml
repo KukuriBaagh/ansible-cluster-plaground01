@@ -4,13 +4,13 @@
   become: true
   tasks:
 
-    - name: install docker containerd
+    - name: Install docker containerd
       community.general.apk:
         name: docker
         state: present
         update_cache: yes
 
-    - name: start and enable docker service
+    - name: Start and enable docker service
       ansible.builtin.service:
         name: docker
         enabled: true
