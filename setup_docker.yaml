@@ -3,12 +3,11 @@
 - hosts: all
   become: true
   tasks:
-
     - name: Install docker containerd
       community.general.apk:
         name: docker
         state: present
-        update_cache: yes
+        update_cache: true
 
     - name: Start and enable docker service
       ansible.builtin.service:

@@ -1,46 +1,40 @@
 ---
-- hosts: all
-  become: true
-  tasks:
 
-  - name: install htop package
-    community.general.apk:
-      name: htop
-      state: present
-      update_cache: yes
-
-  - name: install vim editor
-    community.general.apk:
-      name: vim
-      state: present
-      update_cache: yes
-
-  - name: install git version control system
-    community.general.apk:
-      name: git
-      state: present
-      update_cache: yes
-
-  - name: install nginx server
-    community.general.apk:
-      name: nginx
-      state: present
-      update_cache: yes
-
-  - name: start and enable nginx server
-    ansible.builtin.service:
-      name: nginx
-      enabled: true
-      state: started
-
-  - name: install python3 interpreter
-    community.general.apk:
-      name: python3
-      state: present
-      update_cache: yes
-
-  - name: install tmux 
-    community.general.apk:
-      name: tmux
-      state: present
-      update_cache: yes
+  - hosts: all
+    become: true
+    tasks:
+    - name: Install htop package
+      community.general.apk:
+        name: htop
+        state: present
+        update_cache: true
+    - name: Install vim editor
+      community.general.apk:
+        name: vim
+        state: present
+        update_cache: true
+    - name: Install git version control system
+      community.general.apk:
+        name: git
+        state: present
+        update_cache: true
+    - name: Install nginx server
+      community.general.apk:
+        name: nginx
+        state: present
+        update_cache: true
+    - name: Start and enable nginx server
+      ansible.builtin.service:
+        name: nginx
+        enabled: true
+        state: started
+    - name: Install python3 interpreter
+      community.general.apk:
+        name: python3
+        state: present
+        update_cache: true
+    - name: Install tmux
+      community.general.apk:
+        name: tmux
+        state: present
+        update_cache: true
