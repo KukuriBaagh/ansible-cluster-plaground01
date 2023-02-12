@@ -1,1 +1,2 @@
-echo "Lets Setup DB server later..."
+sudo apk add python3
+
