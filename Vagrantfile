@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "web" do |web|
     web.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    web.vm.synced_folder "./app", "/home/vagrant/app"
     web.vm.provision :shell, path: "provision.sh"
   end
 
@@ -53,6 +54,7 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
+
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
