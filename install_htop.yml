@@ -1,8 +1,8 @@
 ---
-
-  - hosts: all
-    become: true
-    tasks:
+- name: Setup Lab Environment for Alpine Linux and Docker Kubernetes Development
+  hosts: all
+  become: true
+  tasks:
     - name: Install htop package
       community.general.apk:
         name: htop
